@@ -1,0 +1,23 @@
+{
+  "symbol": "BTCUSDT",
+  "interval": "1h",
+  "total_records": 17520,
+  "start_time": "2023-10-19 14:00:00",
+  "end_time": "2025-10-18 13:00:00",
+  "duration_days": 729,
+  "price_stats": {
+    "min": 28444.64,
+    "max": 126199.63,
+    "avg": 77928.21450913243,
+    "first": 28482.1,
+    "last": 106888.78,
+    "change": 78406.68,
+    "change_percent": 275.28405559983287
+  },
+  "volume_stats": {
+    "total": 21923688.821556997,
+    "avg": 1251.3521016870432,
+    "min": 55.66311,
+    "max": 23219.73689
+  }
+}
