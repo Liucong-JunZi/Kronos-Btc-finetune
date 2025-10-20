@@ -4,6 +4,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org)
+[![Hugging Face](https://img.shields.io/badge/🤗-Hugging%20Face-yellow.svg)](https://huggingface.co/lc2004)
 
 
 **基于 Kronos 金融预测模型的 BTC/USDT 微调预测**
@@ -19,6 +20,7 @@
 - 📦 包含完整的 Kronos 框架（与官方仓库保持同步）
 - 🚀 即插即用的预测脚本
 - 📊 提供微调后的模型权重和预测结果
+- 🤗 模型已上传至 Hugging Face，便于下载使用
 
 **注意**：本项目不公开微调的具体细节和训练过程，仅提供可用的模型和预测脚本。
 
@@ -31,6 +33,7 @@
   - ✅ 更新项目定位为微调结果展示
   - ✅ 简化文档，移除内部细节说明
   - ✅ 保留完整 Kronos 框架供预测使用
+  - ✅ 新增 Hugging Face 模型下载链接
 
 ## ✨ 核心功能
 
@@ -38,6 +41,7 @@
 - **开箱即用**：无需微调，直接使用预训练模型
 - **可视化结果**：自动生成预测图表
 - **数据获取工具**：包含 BTC 数据爬取脚本
+- **云端模型**：从 Hugging Face 一键下载
 
 ## 🚀 快速开始
 
@@ -53,9 +57,33 @@
 pip install -r requirements.txt
 ```
 
+### 下载模型
+
+模型已上传至 Hugging Face，请从以下链接下载：
+
+#### 🤗 方法一：使用 Hugging Face CLI（推荐）
+
+```bash
+# 下载微调模型
+huggingface-cli download lc2004/kronos_base_model_BTCUSDT_1h_finetune --local-dir ./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/basemodel/best_model
+
+# 下载 Tokenizer
+huggingface-cli download lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune --local-dir ./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/tokenizer/best_model
+```
+
+#### 🌐 方法二：手动下载
+
+从以下 Hugging Face 仓库手动下载：
+
+1. **微调模型**：[lc2004/kronos_base_model_BTCUSDT_1h_finetune](https://huggingface.co/lc2004/kronos_base_model_BTCUSDT_1h_finetune)
+   - 放置到：`./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/basemodel/best_model`
+
+2. **Tokenizer**：[lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune](https://huggingface.co/lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune)
+   - 放置到：`./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/tokenizer/best_model`
+
 ### 运行预测
 
-直接运行预测脚本获取 BTC 价格预测：
+模型下载完成后，直接运行预测脚本获取 BTC 价格预测：
 
 ```bash
 python btc_prediction.py
@@ -67,10 +95,10 @@ python btc_prediction.py
 
 ### 预测脚本参数
 
-修改 `btc_prediction.py` 中的配置参数：
+预测脚本会自动加载下载的模型。如需修改参数，编辑 `btc_prediction.py`：
 
 ```python
-# 模型路径
+# 模型路径（确保已下载到此路径）
 tokenizer_path = "./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/tokenizer/best_model"
 model_path = "./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/basemodel/best_model"
 
@@ -107,10 +135,16 @@ Kronos-Btc-finetune/
 │   ├── get_Data_of_realtime.py   # 实时数据监控
 │   └── README.md                 # 说明
 └── Kronos/                       # Kronos 框架（官方版本）
-    ├── model/                    # 预训练模型
-    ├── finetune_csv/             # 微调模块
-    ├── examples/                 # 预测示例
-    ├── webui/                    # Web界面
+    ├── finetune_csv/
+    │   └── finetuned/
+    │       └── BTCUSDT_1h_finetune/
+    │           ├── tokenizer/
+    │           │   └── best_model/    # ⬇️ 从 HF 下载 Tokenizer
+    │           └── basemodel/
+    │               └── best_model/    # ⬇️ 从 HF 下载模型
+    ├── model/                        # 预训练模型
+    ├── examples/                     # 预测示例
+    ├── webui/                        # Web界面
     └── 其他官方文件...
 ```
 
@@ -139,12 +173,18 @@ Kronos-Btc-finetune/
 
 ## 🐛 常见问题
 
-### Q: 模型加载失败怎么办？
-A: 确保以下文件存在：
-- `Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/tokenizer/best_model`
-- `Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/basemodel/best_model`
+### Q: 模型文件在哪里下载？
+A: 模型已上传至 Hugging Face，请从以下链接下载：
+- **微调模型**：https://huggingface.co/lc2004/kronos_base_model_BTCUSDT_1h_finetune
+- **Tokenizer**：https://huggingface.co/lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune
 
-如缺失，请联系项目维护者获取。
+### Q: 模型加载失败怎么办？
+A: 请确保：
+1. 已正确下载模型到指定路径
+2. 模型路径配置正确：
+   - `./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/tokenizer/best_model`
+   - `./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/basemodel/best_model`
+3. 文件夹内包含必要的模型文件
 
 ### Q: 预测结果保存在哪里？
 A: 预测结果默认保存在当前目录，文件名格式：`btc_prediction_YYYYMMDD_HHMMSS.*`
@@ -158,6 +198,7 @@ A: 检查网络连接和币安 API 可用性。脚本已内置重试机制，稍
 ## 📝 开发计划
 
 - [x] 微调 BTC 预测模型
+- [x] 上传模型到 Hugging Face
 - [ ] 支持更多交易对（ETH、BNB等）
 - [ ] 添加 Web API 服务
 - [ ] 实现回测框架
@@ -200,5 +241,7 @@ A: 检查网络连接和币安 API 可用性。脚本已内置重试机制，稍
 <div align="center">
 
 **⭐ 如果这个项目对您有帮助，请给个 Star！**
+
+[Hugging Face 模型](https://huggingface.co/lc2004) | [GitHub 仓库](https://github.com/Liucong-JunZi/Kronos-Btc-finetune)
 
 </div>
