@@ -3,11 +3,3 @@ BTCUSDT_1h_finetune/tokenizer/model.safetensors
 BTCUSDT_1h_finetune/tokenizer/config.json
 BTCUSDT_1h_finetune/base_model/model.safetensors
 BTCUSDT_1h_finetune/base_model/config.json
-btc_combined_20251020_113432.csv
-btc_combined_20251020_130706.csv
-btc_combined_20251020_133427.csv
-btc_prediction_20251020_113426.png
-btc_prediction_20251020_113432.csv
-btc_prediction_20251020_130445.png
-btc_prediction_20251020_130706.csv
-btc_prediction_20251020_133427.csv
