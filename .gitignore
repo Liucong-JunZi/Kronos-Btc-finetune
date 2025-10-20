@@ -1,1 +1,5 @@
 __pycache__/
+BTCUSDT_1h_finetune/tokenizer/model.safetensors
+BTCUSDT_1h_finetune/tokenizer/config.json
+BTCUSDT_1h_finetune/base_model/model.safetensors
+BTCUSDT_1h_finetune/base_model/config.json

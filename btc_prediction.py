@@ -19,8 +19,8 @@ def load_finetuned_models():
     print("正在加载微调后的模型...")
     
     # 模型路径
-    tokenizer_path = "./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/tokenizer/best_model"
-    model_path = "./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/basemodel/best_model"
+    tokenizer_path = "./BTCUSDT_1h_finetune/tokenizer"
+    model_path = "./BTCUSDT_1h_finetune/base_model"
     
     # 加载tokenizer
     tokenizer = KronosTokenizer.from_pretrained(tokenizer_path)
