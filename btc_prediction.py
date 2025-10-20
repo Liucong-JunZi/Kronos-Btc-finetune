@@ -153,50 +153,50 @@ def predict_btc_prices(tokenizer, model, input_data, pred_len=48):
 
 def visualize_results(historical_data, predicted_data, lookback_window=100):
     """
-    可视化预测结果
+    Visualize prediction results
     """
-    print("正在生成可视化图表...")
+    print("Generating visualization chart...")
     
-    # 获取最后lookback_window条历史数据
+    # Get the last lookback_window historical data
     recent_history = historical_data.iloc[-lookback_window:].copy()
     
-    # 创建图表
+    # Create figure
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
     
-    # 价格图表
+    # Price chart
     ax1.plot(recent_history['timestamps'], recent_history['close'], 
-             label='历史价格', color='blue', linewidth=1.5)
+             label='Historical Price', color='blue', linewidth=1.5)
     ax1.plot(predicted_data.index, predicted_data['close'], 
-             label='预测价格', color='red', linewidth=2, linestyle='--')
+             label='Predicted Price', color='red', linewidth=2, linestyle='--')
     
-    ax1.set_title('BTC价格预测', fontsize=16)
-    ax1.set_ylabel('价格 (USDT)', fontsize=12)
+    ax1.set_title('BTC Price Prediction', fontsize=16)
+    ax1.set_ylabel('Price (USDT)', fontsize=12)
     ax1.legend(loc='upper left')
     ax1.grid(True, alpha=0.3)
     
-    # 成交量图表
+    # Volume chart
     ax2.plot(recent_history['timestamps'], recent_history['volume'], 
-             label='历史成交量', color='blue', linewidth=1.5)
+             label='Historical Volume', color='blue', linewidth=1.5)
     ax2.plot(predicted_data.index, predicted_data['volume'], 
-             label='预测成交量', color='red', linewidth=2, linestyle='--')
+             label='Predicted Volume', color='red', linewidth=2, linestyle='--')
     
-    ax2.set_title('BTC成交量预测', fontsize=16)
-    ax2.set_ylabel('成交量', fontsize=12)
-    ax2.set_xlabel('时间', fontsize=12)
+    ax2.set_title('BTC Volume Prediction', fontsize=16)
+    ax2.set_ylabel('Volume', fontsize=12)
+    ax2.set_xlabel('Time', fontsize=12)
     ax2.legend(loc='upper left')
     ax2.grid(True, alpha=0.3)
     
-    # 格式化x轴
+    # Format x-axis
     for ax in [ax1, ax2]:
         ax.tick_params(axis='x', rotation=45)
     
     plt.tight_layout()
     
-    # 保存图表
+    # Save chart
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     plot_path = f"btc_prediction_{timestamp}.png"
     plt.savefig(plot_path, dpi=300, bbox_inches='tight')
-    print(f"图表已保存: {plot_path}")
+    print(f"Chart saved: {plot_path}")
     
     plt.show()
 

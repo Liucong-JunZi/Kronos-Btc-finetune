@@ -169,7 +169,7 @@ Kronos-Btc-finetune/
 
 ### 预测结果示意图
 
-![BTC 价格预测示例](btc_prediction_20251020_113426.png)
+![BTC 价格预测示例](btc_prediction_20251020_133411.png)
 
 ## 🐛 常见问题
 
