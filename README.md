@@ -65,10 +65,10 @@ pip install -r requirements.txt
 
 ```bash
 # 下载微调模型
-huggingface-cli download lc2004/kronos_base_model_BTCUSDT_1h_finetune --local-dir ./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/basemodel/best_model
+huggingface-cli download lc2004/kronos_base_model_BTCUSDT_1h_finetune --local-dir ./BTCUSDT_1h_finetune/base_model
 
 # 下载 Tokenizer
-huggingface-cli download lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune --local-dir ./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/tokenizer/best_model
+huggingface-cli download lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune --local-dir ./BTCUSDT_1h_finetune/tokenizer
 ```
 
 #### 🌐 方法二：手动下载
@@ -76,10 +76,10 @@ huggingface-cli download lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune --loca
 从以下 Hugging Face 仓库手动下载：
 
 1. **微调模型**：[lc2004/kronos_base_model_BTCUSDT_1h_finetune](https://huggingface.co/lc2004/kronos_base_model_BTCUSDT_1h_finetune)
-   - 放置到：`./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/basemodel/best_model`
+   - 放置到：`./BTCUSDT_1h_finetune/base_model`
 
 2. **Tokenizer**：[lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune](https://huggingface.co/lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune)
-   - 放置到：`./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/tokenizer/best_model`
+   - 放置到：`./BTCUSDT_1h_finetune/tokenizer`
 
 ### 运行预测
 
@@ -99,8 +99,8 @@ python btc_prediction.py
 
 ```python
 # 模型路径（确保已下载到此路径）
-tokenizer_path = "./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/tokenizer/best_model"
-model_path = "./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/basemodel/best_model"
+tokenizer_path = "./BTCUSDT_1h_finetune/tokenizer"
+model_path = "./BTCUSDT_1h_finetune/base_model"
 
 # 预测参数
 lookback_window = 512        # 历史数据窗口
@@ -126,6 +126,10 @@ Kronos-Btc-finetune/
 ├── btc_prediction.py              # 预测脚本
 ├── requirements.txt               # 依赖
 ├── README.md                      # 项目说明
+├── BTCUSDT_1h_finetune/           # 微调模型文件夹
+│   ├── tokenizer/                 # ⬇️ 从 HF 下载 Tokenizer
+│   ├── base_model/                # ⬇️ 从 HF 下载基础模型
+│   └── logs/                      # 训练日志
 ├── data/                          # 数据目录
 │   ├── BTCUSDT_1h_*.csv          # BTC K线数据
 │   ├── BTCUSDT_1h_*.json         # JSON格式数据
@@ -135,16 +139,9 @@ Kronos-Btc-finetune/
 │   ├── get_Data_of_realtime.py   # 实时数据监控
 │   └── README.md                 # 说明
 └── Kronos/                       # Kronos 框架（官方版本）
-    ├── finetune_csv/
-    │   └── finetuned/
-    │       └── BTCUSDT_1h_finetune/
-    │           ├── tokenizer/
-    │           │   └── best_model/    # ⬇️ 从 HF 下载 Tokenizer
-    │           └── basemodel/
-    │               └── best_model/    # ⬇️ 从 HF 下载模型
-    ├── model/                        # 预训练模型
-    ├── examples/                     # 预测示例
-    ├── webui/                        # Web界面
+    ├── model/                    # 预训练模型
+    ├── examples/                 # 预测示例
+    ├── webui/                    # Web界面
     └── 其他官方文件...
 ```
 
@@ -182,8 +179,8 @@ A: 模型已上传至 Hugging Face，请从以下链接下载：
 A: 请确保：
 1. 已正确下载模型到指定路径
 2. 模型路径配置正确：
-   - `./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/tokenizer/best_model`
-   - `./Kronos/finetune_csv/finetuned/BTCUSDT_1h_finetune/basemodel/best_model`
+   - `./BTCUSDT_1h_finetune/tokenizer`
+   - `./BTCUSDT_1h_finetune/base_model`
 3. 文件夹内包含必要的模型文件
 
 ### Q: 预测结果保存在哪里？
