@@ -1,5 +1,9 @@
 __pycache__/
-BTCUSDT_1h_finetune/tokenizer/model.safetensors
-BTCUSDT_1h_finetune/tokenizer/config.json
-BTCUSDT_1h_finetune/base_model/model.safetensors
-BTCUSDT_1h_finetune/base_model/config.json
+BTCUSDT_1h_finetune/tokenizer/best_model/config.json
+BTCUSDT_1h_finetune/tokenizer/best_model/model.safetensors
+BTCUSDT_4h_finetune/basemodel/best_model/config.json
+BTCUSDT_4h_finetune/basemodel/best_model/model.safetensors
+BTCUSDT_1h_finetune/basemodel/best_model/config.json
+BTCUSDT_1h_finetune/basemodel/best_model/model.safetensors
+BTCUSDT_4h_finetune/tokenizer/best_model/config.json
+BTCUSDT_4h_finetune/tokenizer/best_model/model.safetensors

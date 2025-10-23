@@ -19,8 +19,8 @@ def load_finetuned_models():
     print("正在加载微调后的模型...")
     
     # 模型路径
-    tokenizer_path = "./BTCUSDT_1h_finetune/tokenizer"
-    model_path = "./BTCUSDT_1h_finetune/base_model"
+    tokenizer_path ="./BTCUSDT_1h_finetune/tokenizer/best_model"
+    model_path =  "./BTCUSDT_1h_finetune/basemodel/best_model"
     
     # 加载tokenizer
     tokenizer = KronosTokenizer.from_pretrained(tokenizer_path)
@@ -194,7 +194,7 @@ def visualize_results(historical_data, predicted_data, lookback_window=100):
     
     # Save chart
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    plot_path = f"btc_prediction_{timestamp}.png"
+    plot_path = f"btc_1h_prediction_{timestamp}.png"
     plt.savefig(plot_path, dpi=300, bbox_inches='tight')
     print(f"Chart saved: {plot_path}")
     
@@ -207,7 +207,7 @@ def save_prediction_results(historical_data, predicted_data):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
     # 保存预测结果
-    pred_path = f"btc_prediction_{timestamp}.csv"
+    pred_path = f"btc_1h_prediction_{timestamp}.csv"
     predicted_data.to_csv(pred_path)
     print(f"预测结果已保存: {pred_path}")
     
@@ -221,7 +221,7 @@ def save_prediction_results(historical_data, predicted_data):
     # 合并数据
     combined_data = pd.concat([combined_data, pred_df], ignore_index=True)
     
-    combined_path = f"btc_combined_{timestamp}.csv"
+    combined_path = f"btc_1h_combined_{timestamp}.csv"
     combined_data.to_csv(combined_path, index=False)
     print(f"合并数据已保存: {combined_path}")
 

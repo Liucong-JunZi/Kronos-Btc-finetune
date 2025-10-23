@@ -26,17 +26,18 @@
 
 ## ℹ️ 项目版本
 
-- **当前版本**：1.0.0
-- **更新时间**：2025年10月20日
+- **当前版本**：1.1.0
+- **更新时间**：2025年10月23日
 - **项目定位**：微调结果发布
 - **最新更新**：
-  - ✅ 更新项目定位为微调结果展示
-  - ✅ 简化文档，移除内部细节说明
-  - ✅ 保留完整 Kronos 框架供预测使用
-  - ✅ 新增 Hugging Face 模型下载链接
+  - ✅ 新增 4 小时时间框架预测模型
+  - ✅ 支持 1h 和 4h 两种时间粒度预测
+  - ✅ 更新文档，修正模型路径
+  - ✅ 优化项目结构说明
 
 ## ✨ 核心功能
 
+- **多时间框架预测**：支持 1 小时和 4 小时两种时间粒度预测
 - **实时预测**：基于微调模型进行 BTC/USDT 价格预测
 - **开箱即用**：无需微调，直接使用预训练模型
 - **可视化结果**：自动生成预测图表
@@ -59,52 +60,94 @@ pip install -r requirements.txt
 
 ### 下载模型
 
-模型已上传至 Hugging Face，请从以下链接下载：
+模型已上传至 Hugging Face，请根据需要下载对应时间框架的模型：
 
 #### 🤗 方法一：使用 Hugging Face CLI（推荐）
 
+**1 小时时间框架模型：**
 ```bash
-# 下载微调模型
-huggingface-cli download lc2004/kronos_base_model_BTCUSDT_1h_finetune --local-dir ./BTCUSDT_1h_finetune/base_model
+# 下载 1h 微调模型
+huggingface-cli download lc2004/kronos_base_model_BTCUSDT_1h_finetune --local-dir ./BTCUSDT_1h_finetune/basemodel/best_model
 
-# 下载 Tokenizer
-huggingface-cli download lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune --local-dir ./BTCUSDT_1h_finetune/tokenizer
+# 下载 1h Tokenizer
+huggingface-cli download lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune --local-dir ./BTCUSDT_1h_finetune/tokenizer/best_model
+```
+
+**4 小时时间框架模型：**
+```bash
+# 下载 4h 微调模型
+huggingface-cli download lc2004/kronos_base_model_BTCUSDT_4h_finetune --local-dir ./BTCUSDT_4h_finetune/basemodel/best_model
+
+# 下载 4h Tokenizer
+huggingface-cli download lc2004/kronos_tokenizer_base_BTCUSDT_4h_finetune --local-dir ./BTCUSDT_4h_finetune/tokenizer/best_model
 ```
 
 #### 🌐 方法二：手动下载
 
 从以下 Hugging Face 仓库手动下载：
 
+**1 小时时间框架：**
 1. **微调模型**：[lc2004/kronos_base_model_BTCUSDT_1h_finetune](https://huggingface.co/lc2004/kronos_base_model_BTCUSDT_1h_finetune)
-   - 放置到：`./BTCUSDT_1h_finetune/base_model`
+   - 放置到：`./BTCUSDT_1h_finetune/basemodel/best_model`
 
 2. **Tokenizer**：[lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune](https://huggingface.co/lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune)
-   - 放置到：`./BTCUSDT_1h_finetune/tokenizer`
+   - 放置到：`./BTCUSDT_1h_finetune/tokenizer/best_model`
+
+**4 小时时间框架：**
+3. **微调模型**：[lc2004/kronos_base_model_BTCUSDT_4h_finetune](https://huggingface.co/lc2004/kronos_base_model_BTCUSDT_4h_finetune)
+   - 放置到：`./BTCUSDT_4h_finetune/basemodel/best_model`
+
+4. **Tokenizer**：[lc2004/kronos_tokenizer_base_BTCUSDT_4h_finetune](https://huggingface.co/lc2004/kronos_tokenizer_base_BTCUSDT_4h_finetune)
+   - 放置到：`./BTCUSDT_4h_finetune/tokenizer/best_model`
 
 ### 运行预测
 
-模型下载完成后，直接运行预测脚本获取 BTC 价格预测：
+模型下载完成后，根据需要运行对应的预测脚本：
 
+**1 小时时间框架预测（预测未来 48 小时）：**
 ```bash
-python btc_prediction.py
+python btc_1h_prediction.py
+```
+
+**4 小时时间框架预测（预测未来 192 小时/8 天）：**
+```bash
+python btc_4h_prediction.py
 ```
 
 预测结果将自动保存到输出目录。
+
+> **💡 提示**：
+> - 1h 模型适合短期预测（1-2天）
+> - 4h 模型适合中期预测（3-7天）
+> - 建议结合两种时间框架的预测结果进行综合分析
 
 ## 🔧 详细使用说明
 
 ### 预测脚本参数
 
-预测脚本会自动加载下载的模型。如需修改参数，编辑 `btc_prediction.py`：
+预测脚本会自动加载下载的模型。如需修改参数：
 
+**编辑 `btc_1h_prediction.py`（1小时框架）：**
 ```python
 # 模型路径（确保已下载到此路径）
-tokenizer_path = "./BTCUSDT_1h_finetune/tokenizer"
-model_path = "./BTCUSDT_1h_finetune/base_model"
+tokenizer_path = "./BTCUSDT_1h_finetune/tokenizer/best_model"
+model_path = "./BTCUSDT_1h_finetune/basemodel/best_model"
 
 # 预测参数
 lookback_window = 512        # 历史数据窗口
-pred_len = 48                # 预测长度
+pred_len = 48                # 预测长度（48小时）
+sample_count = 5             # 采样次数
+```
+
+**编辑 `btc_4h_prediction.py`（4小时框架）：**
+```python
+# 模型路径（确保已下载到此路径）
+tokenizer_path = "./BTCUSDT_4h_finetune/tokenizer/best_model"
+model_path = "./BTCUSDT_4h_finetune/basemodel/best_model"
+
+# 预测参数
+lookback_window = 512        # 历史数据窗口
+pred_len = 48                # 预测长度（192小时/8天）
 sample_count = 5             # 采样次数
 ```
 
@@ -123,15 +166,24 @@ python get_Data_of_realtime.py     # 实时监控数据
 
 ```
 Kronos-Btc-finetune/
-├── btc_prediction.py              # 预测脚本
+├── btc_1h_prediction.py           # 1小时预测脚本
+├── btc_4h_prediction.py           # 4小时预测脚本
 ├── requirements.txt               # 依赖
 ├── README.md                      # 项目说明
-├── BTCUSDT_1h_finetune/           # 微调模型文件夹
-│   ├── tokenizer/                 # ⬇️ 从 HF 下载 Tokenizer
-│   ├── base_model/                # ⬇️ 从 HF 下载基础模型
-│   └── logs/                      # 训练日志
+├── BTCUSDT_1h_finetune/           # 1小时微调模型
+│   ├── basemodel/
+│   │   └── best_model/           # ⬇️ 从 HF 下载 1h 基础模型
+│   ├── tokenizer/
+│   │   └── best_model/           # ⬇️ 从 HF 下载 1h Tokenizer
+│   └── logs/                     # 训练日志
+├── BTCUSDT_4h_finetune/           # 4小时微调模型
+│   ├── basemodel/
+│   │   └── best_model/           # ⬇️ 从 HF 下载 4h 基础模型
+│   ├── tokenizer/
+│   │   └── best_model/           # ⬇️ 从 HF 下载 4h Tokenizer
+│   └── logs/                     # 训练日志
 ├── data/                          # 数据目录
-│   ├── BTCUSDT_1h_*.csv          # BTC K线数据
+│   ├── BTCUSDT_1h_*.csv          # 1h K线数据
 │   ├── BTCUSDT_1h_*.json         # JSON格式数据
 │   └── BTCUSDT_1h_*_stats.json   # 数据统计
 ├── get_btc_data/                 # 数据获取工具
@@ -145,7 +197,10 @@ Kronos-Btc-finetune/
     └── 其他官方文件...
 ```
 
-**重要说明**：`Kronos/` 文件夹包含完整的 Kronos 框架，结构与 [官方仓库](https://github.com/shiyu-coder/Kronos) 保持一致。预测脚本依赖此框架，请勿修改其结构。
+**重要说明**：
+- `Kronos/` 文件夹包含完整的 Kronos 框架，与 [官方仓库](https://github.com/shiyu-coder/Kronos) 保持一致
+- 预测脚本依赖此框架，请勿修改其结构
+- 模型文件需放置在 `basemodel/best_model/` 和 `tokenizer/best_model/` 目录下
 
 ## 📊 预测结果示例
 
@@ -153,53 +208,74 @@ Kronos-Btc-finetune/
 
 ```
 预测结果文件:
-- btc_prediction_YYYYMMDD_HHMMSS.csv    # CSV 格式预测数据
-- btc_prediction_YYYYMMDD_HHMMSS.json   # JSON 格式预测数据
-- btc_prediction_YYYYMMDD_HHMMSS.png    # 可视化图表
+- btc_1h_prediction_YYYYMMDD_HHMMSS.csv    # 1h CSV 格式预测数据
+- btc_1h_prediction_YYYYMMDD_HHMMSS.json   # 1h JSON 格式预测数据
+- btc_1h_prediction_YYYYMMDD_HHMMSS.png    # 1h 可视化图表
+
+- btc_4h_prediction_YYYYMMDD_HHMMSS.csv    # 4h CSV 格式预测数据
+- btc_4h_prediction_YYYYMMDD_HHMMSS.json   # 4h JSON 格式预测数据
+- btc_4h_prediction_YYYYMMDD_HHMMSS.png    # 4h 可视化图表
 ```
 
 包含内容：
 - 历史 BTC/USDT K线数据
-- 未来 48 小时的价格预测
+- 未来价格预测（1h: 48小时 / 4h: 192小时）
 - 成交量预测
 - 可视化图表（价格 & 成交量）
 
 ### 预测结果示意图
 
-![BTC 价格预测示例](btc_prediction_20251020_133411.png)
+**1 小时时间框架预测（短期 48 小时）：**
+
+![BTC 1h 价格预测示例](btc_1h_prediction_20251023_203714.png)
+
+**4 小时时间框架预测（中期 8 天）：**
+
+![BTC 4h 价格预测示例](btc_4h_prediction_20251023_203741.png)
 
 ## 🐛 常见问题
 
 ### Q: 模型文件在哪里下载？
-A: 模型已上传至 Hugging Face，请从以下链接下载：
-- **微调模型**：https://huggingface.co/lc2004/kronos_base_model_BTCUSDT_1h_finetune
-- **Tokenizer**：https://huggingface.co/lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune
+A: 模型已上传至 Hugging Face，根据时间框架选择：
+
+**1 小时框架：**
+- 微调模型：https://huggingface.co/lc2004/kronos_base_model_BTCUSDT_1h_finetune
+- Tokenizer：https://huggingface.co/lc2004/kronos_tokenizer_base_BTCUSDT_1h_finetune
+
+**4 小时框架：**
+- 微调模型：https://huggingface.co/lc2004/kronos_base_model_BTCUSDT_4h_finetune
+- Tokenizer：https://huggingface.co/lc2004/kronos_tokenizer_base_BTCUSDT_4h_finetune
 
 ### Q: 模型加载失败怎么办？
 A: 请确保：
 1. 已正确下载模型到指定路径
 2. 模型路径配置正确：
-   - `./BTCUSDT_1h_finetune/tokenizer`
-   - `./BTCUSDT_1h_finetune/base_model`
-3. 文件夹内包含必要的模型文件
+   - **1h 模型**：`./BTCUSDT_1h_finetune/basemodel/best_model` 和 `./BTCUSDT_1h_finetune/tokenizer/best_model`
+   - **4h 模型**：`./BTCUSDT_4h_finetune/basemodel/best_model` 和 `./BTCUSDT_4h_finetune/tokenizer/best_model`
+3. 文件夹内包含必要的模型文件（`config.json`, `model.safetensors` 等）
 
 ### Q: 预测结果保存在哪里？
 A: 预测结果默认保存在当前目录，文件名格式：`btc_prediction_YYYYMMDD_HHMMSS.*`
 
 ### Q: 可以修改预测时间窗口吗？
-A: 可以，修改 `btc_prediction.py` 中的 `pred_len` 参数（默认48小时）。
+A: 可以，修改对应预测脚本中的 `pred_len` 参数：
+- `btc_1h_prediction.py`：默认 48（预测 48 小时）
+- `btc_4h_prediction.py`：默认 48（预测 192 小时/8 天）
 
 ### Q: 数据获取失败怎么办？
 A: 检查网络连接和币安 API 可用性。脚本已内置重试机制，稍等片刻后重试。
 
 ## 📝 开发计划
 
-- [x] 微调 BTC 预测模型
+- [x] 微调 BTC 1h 预测模型
+- [x] 微调 BTC 4h 预测模型
 - [x] 上传模型到 Hugging Face
-- [ ] 支持更多交易对（ETH、BNB等）
+- [x] 支持多时间框架预测
+- [ ] 支持更多交易对（ETH、BNB 等）
 - [ ] 添加 Web API 服务
 - [ ] 实现回测框架
 - [ ] 添加模型评估指标
+- [ ] 集成实时数据流预测
 
 ## 🤝 贡献指南
 

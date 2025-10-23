@@ -1,0 +1,254 @@
+2025-10-23 15:18:37 - basemodel_training_rank_0 - INFO - === Basemodel Training Started ===
+2025-10-23 15:18:37 - basemodel_training_rank_0 - INFO - Experiment Name: BTCUSDT_4h_finetune
+2025-10-23 15:18:37 - basemodel_training_rank_0 - INFO - Log Directory: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/logs
+2025-10-23 15:18:37 - basemodel_training_rank_0 - INFO - Rank: 0
+2025-10-23 15:18:37 - basemodel_training_rank_0 - INFO - Timestamp: 2025-10-23 15:18:37
+2025-10-23 15:18:37 - basemodel_training_rank_0 - INFO - Loading fine-tuned tokenizer...
+2025-10-23 15:18:37 - basemodel_training_rank_0 - INFO - Loading pretrained predictor...
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Model parameters: 102,310,592
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - === Training Configuration ===
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Data path: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/data/BTCUSDT_4h_20251023_145012.csv
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Lookback window: 512
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Predict window: 48
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Batch size: 32
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Learning rate: 1e-06
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Training epochs: 20
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Device: cuda:0
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Tokenizer path: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/tokenizer/best_model
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Pretrained model path: /root/project/Kronos-Btc-finetune-master/Kronos/model/Kronos-base
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Starting fine-tuning training...
+2025-10-23 15:18:38 - basemodel_training_rank_0 - INFO - Starting training...
+2025-10-23 15:19:00 - basemodel_training_rank_0 - INFO - [Epoch 1/20, Step 50/228] LR: 0.000000, Loss: 2.8730
+2025-10-23 15:19:20 - basemodel_training_rank_0 - INFO - [Epoch 1/20, Step 100/228] LR: 0.000001, Loss: 2.8374
+2025-10-23 15:19:41 - basemodel_training_rank_0 - INFO - [Epoch 1/20, Step 150/228] LR: 0.000001, Loss: 2.6377
+2025-10-23 15:20:02 - basemodel_training_rank_0 - INFO - [Epoch 1/20, Step 200/228] LR: 0.000001, Loss: 2.7000
+2025-10-23 15:20:16 - basemodel_training_rank_0 - INFO - 
+--- Epoch 1/20 Summary ---
+Training Loss: 2.7590
+Validation Loss: 2.8979
+Epoch Time: 97.16 seconds
+
+2025-10-23 15:20:16 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.8979)
+2025-10-23 15:20:26 - basemodel_training_rank_0 - INFO - [Epoch 2/20, Step 22/228] LR: 0.000001, Loss: 2.5202
+2025-10-23 15:20:47 - basemodel_training_rank_0 - INFO - [Epoch 2/20, Step 72/228] LR: 0.000001, Loss: 2.5082
+2025-10-23 15:21:08 - basemodel_training_rank_0 - INFO - [Epoch 2/20, Step 122/228] LR: 0.000001, Loss: 2.5272
+2025-10-23 15:21:28 - basemodel_training_rank_0 - INFO - [Epoch 2/20, Step 172/228] LR: 0.000001, Loss: 2.4804
+2025-10-23 15:21:49 - basemodel_training_rank_0 - INFO - [Epoch 2/20, Step 222/228] LR: 0.000001, Loss: 2.4945
+2025-10-23 15:21:54 - basemodel_training_rank_0 - INFO - 
+--- Epoch 2/20 Summary ---
+Training Loss: 2.5372
+Validation Loss: 2.7732
+Epoch Time: 97.61 seconds
+
+2025-10-23 15:21:55 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.7732)
+2025-10-23 15:22:13 - basemodel_training_rank_0 - INFO - [Epoch 3/20, Step 44/228] LR: 0.000001, Loss: 2.4789
+2025-10-23 15:22:34 - basemodel_training_rank_0 - INFO - [Epoch 3/20, Step 94/228] LR: 0.000001, Loss: 2.4458
+2025-10-23 15:22:55 - basemodel_training_rank_0 - INFO - [Epoch 3/20, Step 144/228] LR: 0.000001, Loss: 2.4115
+2025-10-23 15:23:16 - basemodel_training_rank_0 - INFO - [Epoch 3/20, Step 194/228] LR: 0.000001, Loss: 2.3878
+2025-10-23 15:23:32 - basemodel_training_rank_0 - INFO - 
+--- Epoch 3/20 Summary ---
+Training Loss: 2.4464
+Validation Loss: 2.7131
+Epoch Time: 97.50 seconds
+
+2025-10-23 15:23:33 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.7131)
+2025-10-23 15:23:40 - basemodel_training_rank_0 - INFO - [Epoch 4/20, Step 16/228] LR: 0.000001, Loss: 2.4407
+2025-10-23 15:24:01 - basemodel_training_rank_0 - INFO - [Epoch 4/20, Step 66/228] LR: 0.000001, Loss: 2.4408
+2025-10-23 15:24:22 - basemodel_training_rank_0 - INFO - [Epoch 4/20, Step 116/228] LR: 0.000001, Loss: 2.3836
+2025-10-23 15:24:43 - basemodel_training_rank_0 - INFO - [Epoch 4/20, Step 166/228] LR: 0.000001, Loss: 2.3513
+2025-10-23 15:25:04 - basemodel_training_rank_0 - INFO - [Epoch 4/20, Step 216/228] LR: 0.000001, Loss: 2.4213
+2025-10-23 15:25:11 - basemodel_training_rank_0 - INFO - 
+--- Epoch 4/20 Summary ---
+Training Loss: 2.3848
+Validation Loss: 2.6815
+Epoch Time: 97.66 seconds
+
+2025-10-23 15:25:12 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.6815)
+2025-10-23 15:25:28 - basemodel_training_rank_0 - INFO - [Epoch 5/20, Step 38/228] LR: 0.000001, Loss: 2.3185
+2025-10-23 15:25:49 - basemodel_training_rank_0 - INFO - [Epoch 5/20, Step 88/228] LR: 0.000001, Loss: 2.3146
+2025-10-23 15:26:10 - basemodel_training_rank_0 - INFO - [Epoch 5/20, Step 138/228] LR: 0.000001, Loss: 2.3860
+2025-10-23 15:26:31 - basemodel_training_rank_0 - INFO - [Epoch 5/20, Step 188/228] LR: 0.000001, Loss: 2.2881
+2025-10-23 15:26:49 - basemodel_training_rank_0 - INFO - 
+--- Epoch 5/20 Summary ---
+Training Loss: 2.3391
+Validation Loss: 2.6593
+Epoch Time: 97.52 seconds
+
+2025-10-23 15:26:50 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.6593)
+2025-10-23 15:26:55 - basemodel_training_rank_0 - INFO - [Epoch 6/20, Step 10/228] LR: 0.000001, Loss: 2.2803
+2025-10-23 15:27:16 - basemodel_training_rank_0 - INFO - [Epoch 6/20, Step 60/228] LR: 0.000001, Loss: 2.3232
+2025-10-23 15:27:37 - basemodel_training_rank_0 - INFO - [Epoch 6/20, Step 110/228] LR: 0.000001, Loss: 2.3425
+2025-10-23 15:27:58 - basemodel_training_rank_0 - INFO - [Epoch 6/20, Step 160/228] LR: 0.000001, Loss: 2.3152
+2025-10-23 15:28:19 - basemodel_training_rank_0 - INFO - [Epoch 6/20, Step 210/228] LR: 0.000001, Loss: 2.2670
+2025-10-23 15:28:28 - basemodel_training_rank_0 - INFO - 
+--- Epoch 6/20 Summary ---
+Training Loss: 2.3029
+Validation Loss: 2.6397
+Epoch Time: 97.62 seconds
+
+2025-10-23 15:28:29 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.6397)
+2025-10-23 15:28:42 - basemodel_training_rank_0 - INFO - [Epoch 7/20, Step 32/228] LR: 0.000001, Loss: 2.2501
+2025-10-23 15:29:03 - basemodel_training_rank_0 - INFO - [Epoch 7/20, Step 82/228] LR: 0.000001, Loss: 2.2885
+2025-10-23 15:29:24 - basemodel_training_rank_0 - INFO - [Epoch 7/20, Step 132/228] LR: 0.000001, Loss: 2.2590
+2025-10-23 15:29:45 - basemodel_training_rank_0 - INFO - [Epoch 7/20, Step 182/228] LR: 0.000001, Loss: 2.2355
+2025-10-23 15:30:06 - basemodel_training_rank_0 - INFO - 
+--- Epoch 7/20 Summary ---
+Training Loss: 2.2717
+Validation Loss: 2.6226
+Epoch Time: 97.47 seconds
+
+2025-10-23 15:30:07 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.6226)
+2025-10-23 15:30:09 - basemodel_training_rank_0 - INFO - [Epoch 8/20, Step 4/228] LR: 0.000001, Loss: 2.2300
+2025-10-23 15:30:30 - basemodel_training_rank_0 - INFO - [Epoch 8/20, Step 54/228] LR: 0.000001, Loss: 2.2826
+2025-10-23 15:30:51 - basemodel_training_rank_0 - INFO - [Epoch 8/20, Step 104/228] LR: 0.000001, Loss: 2.2568
+2025-10-23 15:31:12 - basemodel_training_rank_0 - INFO - [Epoch 8/20, Step 154/228] LR: 0.000001, Loss: 2.2477
+2025-10-23 15:31:33 - basemodel_training_rank_0 - INFO - [Epoch 8/20, Step 204/228] LR: 0.000001, Loss: 2.2532
+2025-10-23 15:31:45 - basemodel_training_rank_0 - INFO - 
+--- Epoch 8/20 Summary ---
+Training Loss: 2.2458
+Validation Loss: 2.6087
+Epoch Time: 97.48 seconds
+
+2025-10-23 15:31:46 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.6087)
+2025-10-23 15:31:57 - basemodel_training_rank_0 - INFO - [Epoch 9/20, Step 26/228] LR: 0.000001, Loss: 2.2575
+2025-10-23 15:32:18 - basemodel_training_rank_0 - INFO - [Epoch 9/20, Step 76/228] LR: 0.000001, Loss: 2.2527
+2025-10-23 15:32:38 - basemodel_training_rank_0 - INFO - [Epoch 9/20, Step 126/228] LR: 0.000001, Loss: 2.2037
+2025-10-23 15:32:59 - basemodel_training_rank_0 - INFO - [Epoch 9/20, Step 176/228] LR: 0.000001, Loss: 2.2295
+2025-10-23 15:33:20 - basemodel_training_rank_0 - INFO - [Epoch 9/20, Step 226/228] LR: 0.000001, Loss: 2.1616
+2025-10-23 15:33:23 - basemodel_training_rank_0 - INFO - 
+--- Epoch 9/20 Summary ---
+Training Loss: 2.2232
+Validation Loss: 2.5980
+Epoch Time: 97.51 seconds
+
+2025-10-23 15:33:24 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5980)
+2025-10-23 15:33:44 - basemodel_training_rank_0 - INFO - [Epoch 10/20, Step 48/228] LR: 0.000001, Loss: 2.1208
+2025-10-23 15:34:05 - basemodel_training_rank_0 - INFO - [Epoch 10/20, Step 98/228] LR: 0.000001, Loss: 2.2305
+2025-10-23 15:34:26 - basemodel_training_rank_0 - INFO - [Epoch 10/20, Step 148/228] LR: 0.000001, Loss: 2.2067
+2025-10-23 15:34:47 - basemodel_training_rank_0 - INFO - [Epoch 10/20, Step 198/228] LR: 0.000001, Loss: 2.1895
+2025-10-23 15:35:02 - basemodel_training_rank_0 - INFO - 
+--- Epoch 10/20 Summary ---
+Training Loss: 2.2054
+Validation Loss: 2.5900
+Epoch Time: 97.48 seconds
+
+2025-10-23 15:35:02 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5900)
+2025-10-23 15:35:11 - basemodel_training_rank_0 - INFO - [Epoch 11/20, Step 20/228] LR: 0.000001, Loss: 2.2234
+2025-10-23 15:35:32 - basemodel_training_rank_0 - INFO - [Epoch 11/20, Step 70/228] LR: 0.000000, Loss: 2.2364
+2025-10-23 15:35:53 - basemodel_training_rank_0 - INFO - [Epoch 11/20, Step 120/228] LR: 0.000000, Loss: 2.2082
+2025-10-23 15:36:14 - basemodel_training_rank_0 - INFO - [Epoch 11/20, Step 170/228] LR: 0.000000, Loss: 2.2034
+2025-10-23 15:36:35 - basemodel_training_rank_0 - INFO - [Epoch 11/20, Step 220/228] LR: 0.000000, Loss: 2.1646
+2025-10-23 15:36:40 - basemodel_training_rank_0 - INFO - 
+--- Epoch 11/20 Summary ---
+Training Loss: 2.1905
+Validation Loss: 2.5842
+Epoch Time: 97.33 seconds
+
+2025-10-23 15:36:41 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5842)
+2025-10-23 15:36:58 - basemodel_training_rank_0 - INFO - [Epoch 12/20, Step 42/228] LR: 0.000000, Loss: 2.1861
+2025-10-23 15:37:19 - basemodel_training_rank_0 - INFO - [Epoch 12/20, Step 92/228] LR: 0.000000, Loss: 2.2206
+2025-10-23 15:37:40 - basemodel_training_rank_0 - INFO - [Epoch 12/20, Step 142/228] LR: 0.000000, Loss: 2.1602
+2025-10-23 15:38:01 - basemodel_training_rank_0 - INFO - [Epoch 12/20, Step 192/228] LR: 0.000000, Loss: 2.1790
+2025-10-23 15:38:18 - basemodel_training_rank_0 - INFO - 
+--- Epoch 12/20 Summary ---
+Training Loss: 2.1783
+Validation Loss: 2.5803
+Epoch Time: 97.33 seconds
+
+2025-10-23 15:38:19 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5803)
+2025-10-23 15:38:25 - basemodel_training_rank_0 - INFO - [Epoch 13/20, Step 14/228] LR: 0.000000, Loss: 2.1436
+2025-10-23 15:38:46 - basemodel_training_rank_0 - INFO - [Epoch 13/20, Step 64/228] LR: 0.000000, Loss: 2.2057
+2025-10-23 15:39:07 - basemodel_training_rank_0 - INFO - [Epoch 13/20, Step 114/228] LR: 0.000000, Loss: 2.1624
+2025-10-23 15:39:28 - basemodel_training_rank_0 - INFO - [Epoch 13/20, Step 164/228] LR: 0.000000, Loss: 2.2085
+2025-10-23 15:39:49 - basemodel_training_rank_0 - INFO - [Epoch 13/20, Step 214/228] LR: 0.000000, Loss: 2.2027
+2025-10-23 15:39:57 - basemodel_training_rank_0 - INFO - 
+--- Epoch 13/20 Summary ---
+Training Loss: 2.1685
+Validation Loss: 2.5778
+Epoch Time: 97.51 seconds
+
+2025-10-23 15:39:58 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5778)
+2025-10-23 15:40:13 - basemodel_training_rank_0 - INFO - [Epoch 14/20, Step 36/228] LR: 0.000000, Loss: 2.1630
+2025-10-23 15:40:34 - basemodel_training_rank_0 - INFO - [Epoch 14/20, Step 86/228] LR: 0.000000, Loss: 2.1675
+2025-10-23 15:40:55 - basemodel_training_rank_0 - INFO - [Epoch 14/20, Step 136/228] LR: 0.000000, Loss: 2.1350
+2025-10-23 15:41:16 - basemodel_training_rank_0 - INFO - [Epoch 14/20, Step 186/228] LR: 0.000000, Loss: 2.1205
+2025-10-23 15:41:35 - basemodel_training_rank_0 - INFO - 
+--- Epoch 14/20 Summary ---
+Training Loss: 2.1613
+Validation Loss: 2.5764
+Epoch Time: 97.61 seconds
+
+2025-10-23 15:41:36 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5764)
+2025-10-23 15:41:40 - basemodel_training_rank_0 - INFO - [Epoch 15/20, Step 8/228] LR: 0.000000, Loss: 2.1890
+2025-10-23 15:42:01 - basemodel_training_rank_0 - INFO - [Epoch 15/20, Step 58/228] LR: 0.000000, Loss: 2.1965
+2025-10-23 15:42:21 - basemodel_training_rank_0 - INFO - [Epoch 15/20, Step 108/228] LR: 0.000000, Loss: 2.1346
+2025-10-23 15:42:42 - basemodel_training_rank_0 - INFO - [Epoch 15/20, Step 158/228] LR: 0.000000, Loss: 2.1577
+2025-10-23 15:43:03 - basemodel_training_rank_0 - INFO - [Epoch 15/20, Step 208/228] LR: 0.000000, Loss: 2.1442
+2025-10-23 15:43:14 - basemodel_training_rank_0 - INFO - 
+--- Epoch 15/20 Summary ---
+Training Loss: 2.1560
+Validation Loss: 2.5754
+Epoch Time: 97.46 seconds
+
+2025-10-23 15:43:14 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5754)
+2025-10-23 15:43:27 - basemodel_training_rank_0 - INFO - [Epoch 16/20, Step 30/228] LR: 0.000000, Loss: 2.0994
+2025-10-23 15:43:48 - basemodel_training_rank_0 - INFO - [Epoch 16/20, Step 80/228] LR: 0.000000, Loss: 2.1382
+2025-10-23 15:44:09 - basemodel_training_rank_0 - INFO - [Epoch 16/20, Step 130/228] LR: 0.000000, Loss: 2.1111
+2025-10-23 15:44:30 - basemodel_training_rank_0 - INFO - [Epoch 16/20, Step 180/228] LR: 0.000000, Loss: 2.1671
+2025-10-23 15:44:52 - basemodel_training_rank_0 - INFO - 
+--- Epoch 16/20 Summary ---
+Training Loss: 2.1519
+Validation Loss: 2.5750
+Epoch Time: 97.47 seconds
+
+2025-10-23 15:44:53 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5750)
+2025-10-23 15:44:54 - basemodel_training_rank_0 - INFO - [Epoch 17/20, Step 2/228] LR: 0.000000, Loss: 2.2167
+2025-10-23 15:45:15 - basemodel_training_rank_0 - INFO - [Epoch 17/20, Step 52/228] LR: 0.000000, Loss: 2.1455
+2025-10-23 15:45:35 - basemodel_training_rank_0 - INFO - [Epoch 17/20, Step 102/228] LR: 0.000000, Loss: 2.0983
+2025-10-23 15:45:56 - basemodel_training_rank_0 - INFO - [Epoch 17/20, Step 152/228] LR: 0.000000, Loss: 2.1166
+2025-10-23 15:46:17 - basemodel_training_rank_0 - INFO - [Epoch 17/20, Step 202/228] LR: 0.000000, Loss: 2.1507
+2025-10-23 15:46:30 - basemodel_training_rank_0 - INFO - 
+--- Epoch 17/20 Summary ---
+Training Loss: 2.1496
+Validation Loss: 2.5746
+Epoch Time: 97.44 seconds
+
+2025-10-23 15:46:31 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5746)
+2025-10-23 15:46:41 - basemodel_training_rank_0 - INFO - [Epoch 18/20, Step 24/228] LR: 0.000000, Loss: 2.1567
+2025-10-23 15:47:02 - basemodel_training_rank_0 - INFO - [Epoch 18/20, Step 74/228] LR: 0.000000, Loss: 2.1244
+2025-10-23 15:47:23 - basemodel_training_rank_0 - INFO - [Epoch 18/20, Step 124/228] LR: 0.000000, Loss: 2.1170
+2025-10-23 15:47:44 - basemodel_training_rank_0 - INFO - [Epoch 18/20, Step 174/228] LR: 0.000000, Loss: 2.1415
+2025-10-23 15:48:05 - basemodel_training_rank_0 - INFO - [Epoch 18/20, Step 224/228] LR: 0.000000, Loss: 2.1823
+2025-10-23 15:48:08 - basemodel_training_rank_0 - INFO - 
+--- Epoch 18/20 Summary ---
+Training Loss: 2.1476
+Validation Loss: 2.5745
+Epoch Time: 97.30 seconds
+
+2025-10-23 15:48:09 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5745)
+2025-10-23 15:48:29 - basemodel_training_rank_0 - INFO - [Epoch 19/20, Step 46/228] LR: 0.000000, Loss: 2.1699
+2025-10-23 15:48:49 - basemodel_training_rank_0 - INFO - [Epoch 19/20, Step 96/228] LR: 0.000000, Loss: 2.1482
+2025-10-23 15:49:10 - basemodel_training_rank_0 - INFO - [Epoch 19/20, Step 146/228] LR: 0.000000, Loss: 2.1551
+2025-10-23 15:49:31 - basemodel_training_rank_0 - INFO - [Epoch 19/20, Step 196/228] LR: 0.000000, Loss: 2.1472
+2025-10-23 15:49:46 - basemodel_training_rank_0 - INFO - 
+--- Epoch 19/20 Summary ---
+Training Loss: 2.1475
+Validation Loss: 2.5744
+Epoch Time: 97.33 seconds
+
+2025-10-23 15:49:47 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5744)
+2025-10-23 15:49:55 - basemodel_training_rank_0 - INFO - [Epoch 20/20, Step 18/228] LR: 0.000000, Loss: 2.1741
+2025-10-23 15:50:16 - basemodel_training_rank_0 - INFO - [Epoch 20/20, Step 68/228] LR: 0.000000, Loss: 2.2297
+2025-10-23 15:50:37 - basemodel_training_rank_0 - INFO - [Epoch 20/20, Step 118/228] LR: 0.000000, Loss: 2.2469
+2025-10-23 15:50:58 - basemodel_training_rank_0 - INFO - [Epoch 20/20, Step 168/228] LR: 0.000000, Loss: 2.0793
+2025-10-23 15:51:19 - basemodel_training_rank_0 - INFO - [Epoch 20/20, Step 218/228] LR: 0.000000, Loss: 2.1046
+2025-10-23 15:51:25 - basemodel_training_rank_0 - INFO - 
+--- Epoch 20/20 Summary ---
+Training Loss: 2.1472
+Validation Loss: 2.5744
+Epoch Time: 97.39 seconds
+
+2025-10-23 15:51:25 - basemodel_training_rank_0 - INFO - Best model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel/best_model (validation loss: 2.5744)
+2025-10-23 15:51:25 - basemodel_training_rank_0 - INFO - Basemodel training completed! Best validation loss: 2.5744
+Training time: 32.78 minutes
+Model saved to: /root/project/Kronos-Btc-finetune-master/Kronos/finetune_csv/finetuned//BTCUSDT_4h_finetune/basemodel
