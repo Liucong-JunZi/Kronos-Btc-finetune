@@ -239,16 +239,19 @@ def main():
         
         # 2. 获取最新数据
         df = get_latest_btc_data(days=30)
-        
+        print(df.head())
+        print(df.columns)
+        print(df.dtypes)
         # 3. 预处理数据
         input_data = preprocess_data(df, lookback_window=512)
         
         # 4. 进行预测
         predicted_data = predict_btc_prices(tokenizer, model, input_data, pred_len=48)
-        
-        # 5. 显示预测结果
-        print("\n预测结果预览:")
         print(predicted_data.head())
+        print(predicted_data.columns)
+        print(predicted_data.dtypes)
+        # 5. 显示预测结果
+        
         
         # 6. 可视化结果
         visualize_results(df, predicted_data, lookback_window=100)
